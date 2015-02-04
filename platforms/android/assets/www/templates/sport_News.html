@@ -1,0 +1,21 @@
+ 
+<ion-view title="sport News">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+ <ion-list>
+    <div class="list">
+            
+                <span class="badge badge-warning" ng-show="feeds.length > 0">{{(feeds | filter:filterText).length}} Items</span>
+                 <div class="item item-avatar" ng-repeat="feed in feeds | filter:filterText">                    
+                  <img src="img/ic6.png">
+                    <h2><a href="" ng-click="browse(feed.link)">{{feed.title}}</a></h2>                                         
+                    <p class="text-left">{{feed.contentSnippet}}</p>                    
+                    <span class="small">{{feed.publishedDate}}</span>
+                </div>                
+                       
+        </div>
+ </ion-list>
+  </ion-content>
+</ion-view>
